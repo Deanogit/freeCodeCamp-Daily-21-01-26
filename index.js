@@ -10,7 +10,8 @@
 // Note: The console may not display HTML tags in strings when logging messages. Check the browser console to see logs with tags included.
 
 function parseInlineCode(markdown) {
-  console.log(markdown.replaceAll('`', 'here'));
+  // console.log(markdown.replaceAll("`", "here"))
+  const regex = /`(.*?)`/g;
 
-  return markdown;
+  return markdown.replace(regex, '<code>$1</code>');
 }
